@@ -1,9 +1,3 @@
-/**
- *
- *
- *
- **/
-
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -18,14 +12,14 @@ int day_of_the_year(int day, int month, int year)
     int tageszahlen = 0;
     int tage[12] = {31,28,31,30,31,30,31,31,30,31,30,31};
 
-    //printf("Tag:");
-    //scanf("%i", &day);
+    printf("Tag:");
+    scanf("%i", &day);
 
-    //printf("Monat:");
-    //scanf("%i", &month);
+    printf("Monat:");
+    scanf("%i", &month);
 
-    //printf("Jahr:");
-    //scanf("%i", &year);
+    printf("Jahr:");
+    scanf("%i", &year);
 
     if(exist_date(day, month, year) == 0) {
         printf("Dieses Datum ist ungültig");
@@ -72,8 +66,10 @@ int get_days_for_month(int month, int year)
     if (month < 0 || month > 12 || is_leapyear(year) == -1) {
         return -1;
     }
+    else {
 
-    return tage[month];
+        return tage[month];
+    }
 }
 
 
@@ -116,6 +112,6 @@ int main()
     int month = 0;
     int year = 0;
 
-    printf("Tag des Jahres: %i\n", day_of_the_year(31, 12, 2018));
+    printf("Tag des Jahres: %i\n", day_of_the_year(day, month, year));
     return 0;
 }
