@@ -5,7 +5,7 @@
  *
  *
  **/
-int day_of_the_year(int day, int month, int year)
+int day_of_the_year(int day, int month, int year) //Berechnung des Tages in einem Jahr.
 {
 
     int i = 0;
@@ -29,10 +29,10 @@ int day_of_the_year(int day, int month, int year)
     return 0;
 }
 
-
+//Eingabe von Tag, Monat, Jahr und die Überprüfung.
 void input_date(int *day, int *month, int *year)
 {
-    do {
+    do {                    //Eingabe von Tag, Monat und Jahr.
     printf("Tag:");
     scanf("%i", &*day);
     fflush(stdin);
@@ -45,17 +45,16 @@ void input_date(int *day, int *month, int *year)
     scanf("%i", &*year);
     fflush(stdin);
 
-    } while(exist_date(*day, *month, *year) == 0);
+    } while(exist_date(*day, *month, *year) == 0);  //Überprüfung ob das Datum gültig ist.
 
 }
 
 
 
 
-
+//Überprüfung ob das Datum gültig ist.
 int exist_date(int day, int month, int year)
 {
-    //int get_days_for_month(day, month, year);
     int day_arr[12] = {31,28,31,30,31,30,31,31,30,31,30,31};
 
     if (year > 2400 || get_days_for_month(month, year) == -1 || day > day_arr[month - 1] || day < 0)
@@ -70,7 +69,7 @@ int exist_date(int day, int month, int year)
 }
 
 
-
+//Gibt die Anzahl an Tagen in einem Monat zurück und überprüft ob der Monat gültig ist.
 int get_days_for_month(int month, int year)
 {
     int day_arr[12] = {31,28,31,30,31,30,31,31,30,31,30,31};
@@ -85,6 +84,7 @@ int get_days_for_month(int month, int year)
 }
 
 
+//Überprüft ob es sich um ein Schaltjahr handelt.
 int is_leapyear(int year)
 {
 
